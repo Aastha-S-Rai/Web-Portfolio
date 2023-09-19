@@ -1,0 +1,336 @@
+@import url("https://fonts.cdnfonts.com/css/gilroy-bold");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&family=Work+Sans:wght@500&display=swap");
+// #6c4e47
+.home {
+  // display: flex;
+  // flex-direction: row;
+  // align-items: center;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+@mixin devices ($breakpoint) { //the name of the mixin is devices
+  
+  @if $breakpoint == tablet {    
+    @media only screen and (max-width: 1196px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 481px) {
+      @content;
+    }
+  }
+}
+
+
+.bg {
+  // background-image: linear-gradient(#ffffff,#62c6e7 ,#0000ff);
+  background-image: linear-gradient(white, rgb(50, 50, 173));
+  @include devices(phone) {
+    background-image:none;
+    margin: 0px;
+    // code set for tablet
+  }
+  .aSide {
+    height: 45em;
+    width: 45em;
+    position: relative;
+    z-index: 1;
+    @include devices(phone) {
+      display: none;
+    }
+    .mainModel {
+      width: inherit;
+      height: inherit;
+      position: inherit;
+      display: block;
+      @include devices(phone) {
+        display: none;
+      }
+    }
+  }
+  
+  /* This styles the 3D object inserted in the aside container */
+  
+  .mainContainer {
+    position: absolute;
+    
+    top: 4em;
+    right: 0rem;
+    font-family: "Work Sans", sans-serif;
+    font-size: 35px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 1rem;
+    border-radius: 20px;
+    width: 10%;
+    @include devices(phone) {
+      font-size: 30px;
+      width: 95%;
+      z-index: 3;
+      position:static;
+      padding: 4rem 2em 4rem 2em;
+      margin: 0px;
+    }
+    .label {
+      font-size: 50px;
+      color: purple;
+      @include devices(phone) {
+        font-size: 35px;
+        color: blue;
+      }
+    }
+  
+    .content {
+      margin-top: 0.5rem;
+      width: 80%;
+      font-size: 25px;
+      @include devices(phone) {
+        font-size: 16px;
+        width: 90%;
+      }
+    }
+    width: 60%;
+  }
+  
+  
+  .iconContainer {
+    width: 80%;
+    margin-top: 2em;
+    .icons {
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: row;
+      text-decoration: none;
+  
+      a {
+        text-decoration: none;
+        margin: 0.5rem;
+        font-size: 40px;
+        @include devices(phone) {
+          font-size: 35px;
+          margin: 0.2rem;
+        }
+      }
+      #linkedin {
+        color: rgb(19, 19, 250);
+      }
+      #github {
+        color: black;
+      }
+      #hackerrank {
+        color: green;
+      }
+    }
+    .download {
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      
+      #resume {
+        font-size: 15px;
+        // color: #61c9a8;
+        background-color: black;
+        color: white;
+        border-radius: 1.5rem;
+        padding: 0.3rem;
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        align-items: center;
+        padding: 1rem 3rem;
+        width: fit-content;
+        @include devices(phone) {
+          border-radius: 1rem;
+          padding: 0.5rem 1.5rem;
+        }
+        i {
+          margin-right: 0.5rem;
+          
+        }
+      }
+    }
+  }
+  
+  
+}
+
+
+
+#about {
+  .aboutBg {
+    @extend.bg;
+    // background-image: linear-gradient(white,rgb(222, 222, 97),rgb(201, 201, 26), rgb(188, 188, 11));
+    background-image: linear-gradient(white, rgb(198, 198, 62));
+    display: flex;
+    justify-content: center;
+    @include devices(phone) {
+      background-image: none;
+    }
+  }
+  .aboutContainer {
+    // justify-content: center;
+    // width: 70%;
+    display: grid;
+    grid-template-columns: 1.5fr 3fr;
+    width: 60%;
+    margin: 4em 0em 2em 0em;
+    @include devices(phone) {
+      display: block;
+      width: 100%;
+      margin: 0.5rem;
+    }
+    .aboutHeading {
+      display: none;
+      @include devices(phone) {
+        display: block;
+        width: 100%;
+        color: white;
+        background-color: black;
+        text-align: center;
+        padding: 1rem;
+      }
+    }
+    .image {
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+      padding: 0.7rem;
+      border-radius: 7px;
+      border: 3px solid purple;
+      @include devices(phone) {
+        margin: 2rem;
+      }
+      img{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+
+      }
+    }
+    .aboutcontent {
+      padding: 3rem;
+      // width: 120%;
+      @include devices(phone) {
+        padding: 1rem;
+      }
+      &>div{
+        &>div{
+          font-size: large;
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+          @include devices(phone) {
+            font-size: medium;
+          }
+        }
+        
+        &>h5{
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+          font-weight: bold;
+          color: purple;
+          @include devices(phone) {
+            font-weight: bolder;
+          }
+        }
+        
+      }
+        // font-family: "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif";
+        
+    }
+    .aboutcontent > div {
+      margin: 2rem;
+    }
+  }
+  
+  
+  
+}
+
+
+
+.navContainer {
+  // position: relative;
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  // background-color: transparent;
+  
+  // background-color: rgb(243, 177, 177);
+  // background-color: #9a99ea;
+  // border-radius: 50px;
+  @include devices(phone) {
+    text-align: left;
+    justify-content: left;
+    display: none;
+  }
+
+  a {
+    font-family: "Gilroy-Bold", sans-serif;
+    font-size:large;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    border-bottom: 5px solid transparent;
+    position: relative;
+    z-index: 4;
+    @include devices(phone) {
+      font-size: small;
+    }
+  }
+
+  .navText:hover {
+    // border-bottom: 5px solid #6c4e47;
+    // color: #6c4e47;
+    // border-bottom: 5px solid white;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    border-bottom:5px solid purple;
+  }
+
+  .resume {
+    background-color: rgb(149, 214, 149);
+  }
+
+  .active {
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    border-bottom:5px solid purple;
+  }
+}
+
+.sectionContent{
+  display: none;
+  @include devices(phone) {
+    display: block;
+  }
+}
+
+.activee {
+  display: block;
+}
+
+
+// $breaking-point: 944px;
+// $phone-size: 393px;
+// @media (max-width: $breaking-point) {
+//   .bg {
+//     border: 5px solid black;
+//   }
+// }
+
+// @media (max-width: $breaking-point) {
+//   .bg {
+//     border: 5px solid black;
+//   }
+// }
+

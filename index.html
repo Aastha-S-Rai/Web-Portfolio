@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="index.css" />
+  <link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/235e2d5d47.js" crossorigin="anonymous"></script>
+
+  <title>Portfolio</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+
+<body>
+
+
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <header>
+    <nav>
+      <div class="navContainer">
+        <a href="#" class="active" id="Home" onclick="openSection('home', 'Home')">Home</a>
+        <a href="#" class="navText" id="About" onclick="openSection('about', 'About')">About</a>
+        <a href="#" class="navText" id="Skills" onclick="openSection('skills', 'Skills')">Skills</a>
+        <a href="#" class="navText" id="Projects" onclick="openSection('projects', 'Projects')">Projects</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="activee">
+      <div class="bg">
+        <div class="aSide">
+          <!-- <model-viewer src="./model.glb" alt="VR Headset" camera-controls ar
+            ios-src="./model.glb"></model-viewer> -->
+          <model-viewer camera-controls autoplay ar ar-modes="webxr screen-viewer" class="mainModel" scale="2 2 2" shadow-intensity="1"
+            src="./model.glb" alt="An animated 3D model of a robot"></model-viewer>
+          
+        </div>
+  
+        <div class="mainContainer">
+          <div>Hello, I'm Aastha Rai,</div>
+          <div class="label">a &lt; Developer &gt; </div>
+          <div class="content">
+            Passionate software engineer skilled in debugging, eager for diverse challenges.</div>
+          <div class="iconContainer">
+            <div class="icons">
+  
+              <a href="https://www.linkedin.com/in/aastha-rai/">
+                <i id="linkedin" class="fa-brands fa-linkedin"></i>
+              </a>
+              <a href="https://github.com/Aastha-S-Rai">
+                <i id="github" class="fa-brands fa-square-github"></i>
+              </a>
+              <a href="https://www.hackerrank.com/aastharai2003">
+                <i id="hackerrank" class="fa-brands fa-hackerrank"></i>
+              </a>
+              <!-- <a class="" href="">
+                <i id="download" class="fa-solid fa-download"><span class="resume">Resume</span></i>
+                
+                 Download Resume
+                </a> -->
+  
+  
+            </div>
+            <div class="download">
+              <a id="resume" href="AasthaRaiResume.pdf" download="Aastha-Rai-Resume"><i id="download"
+                  class="fa-solid fa-download"></i> Resume</a>
+  
+            </div>
+          </div>
+  
+        </div>
+      </div>
+      
+
+    </section>
+
+    <section id="about" class="sectionContent">
+      <div class="aboutBg">
+      <div class="aboutContainer">
+        <div class="aboutHeading"><h4>About</h4></div>
+        <div class="image">
+          <img src="./Me.jpeg" alt="" srcset="">
+        </div>
+        <div class="aboutcontent">
+          <div class="objective">
+            <h5>Objective</h5>
+            <div>To become a skilled web developer and create captivating online experiences that leave users delighted and engaged.</div>
+          </div>
+          <div class="values">
+            <h5>Core Values</h5>
+            <div>I'm fueled by boundless passion, crafting user-centric solutions with unwavering reliability and utmost integrity.</div>
+          </div>
+          <div class="journey">
+            <h5>Journey</h5>
+            <div>In 2019, as a diploma student, I began my technical journey, exploring various technologies from app development to Automation. Web technologies captivated me, and Python became my language. Joining a degree college in 2022, I delved deeper into web tech, crafting projects with Flask, Django, and embracing JavaScript challenges. Now, I'm diving into the MERN stack, fueling my web development progress.</div>
+          </div>
+            
+            
+            
+        </div>
+      </div>
+      </div>
+      
+    </section>
+
+    <section id="skills" class="sectionContent">
+      <div>Skills</div>
+    </section>
+
+    <section id="projects" class="sectionContent">
+      <div>Projects</div>
+    </section>
+  </main>
+
+  <script src="./index.js"></script>
+</body>
+
+</html>
