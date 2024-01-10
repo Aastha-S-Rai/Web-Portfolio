@@ -35,7 +35,6 @@
       <div class="navContainer">
         <a href="#" class="active" id="Home" onclick="openSection('home', 'Home')">Home</a>
         <a href="#" class="navText" id="About" onclick="openSection('about', 'About')">About</a>
-        <a href="#" class="navText" id="Skills" onclick="openSection('skills', 'Skills')">Skills</a>
         <a href="#" class="navText" id="Projects" onclick="openSection('projects', 'Projects')">Projects</a>
       </div>
     </nav>
@@ -47,11 +46,11 @@
         <div class="aSide">
           <!-- <model-viewer src="./model.glb" alt="VR Headset" camera-controls ar
             ios-src="./model.glb"></model-viewer> -->
-          <model-viewer camera-controls autoplay ar ar-modes="webxr screen-viewer" class="mainModel" scale="2 2 2" shadow-intensity="1"
-            src="./model.glb" alt="An animated 3D model of a robot"></model-viewer>
-          
+          <model-viewer camera-controls autoplay ar ar-modes="webxr screen-viewer" class="mainModel" scale="2 2 2"
+            shadow-intensity="1" src="./model.glb" alt="An animated 3D model of a robot"></model-viewer>
+
         </div>
-  
+
         <div class="mainContainer">
           <div>Hello, I'm Aastha Rai,</div>
           <div class="label">a &lt; Developer &gt; </div>
@@ -59,7 +58,7 @@
             Passionate software engineer skilled in debugging, eager for diverse challenges.</div>
           <div class="iconContainer">
             <div class="icons">
-  
+
               <a href="https://www.linkedin.com/in/aastha-rai/">
                 <i id="linkedin" class="fa-brands fa-linkedin"></i>
               </a>
@@ -74,61 +73,105 @@
                 
                  Download Resume
                 </a> -->
-  
-  
+
+
             </div>
             <div class="download">
               <a id="resume" href="AasthaRaiResume.pdf" download="Aastha-Rai-Resume"><i id="download"
                   class="fa-solid fa-download"></i> Resume</a>
-  
+
             </div>
           </div>
-  
+
         </div>
-      </div>
+
+        <!-- <div class="skillsIcon">
+          <div class="icon"><img src="./logos/nodejs.png" alt="" srcset=""></div>
+          <div class="icon"><img src="./logos/reactjs.png" alt="" srcset=""></div>
+          <div class="icon"><img src="./logos/html.png" alt="" srcset=""></div>
+          <div class="icon"><img src="./logos/css.png" alt="" srcset=""></div>
+          <div class="icon"><img src="./logos/mongodb.png" alt="" srcset=""></div>
+
+          <div class="icon"><img src="./logos/mysql.png" alt="" srcset=""></div>
+          <div class="icon"><img src="./logos/python.png" alt="" srcset=""></div>
+          <div class="icon"><img src="./logos/django.png" alt="" srcset=""></div>
+          <div class="icon"><img src="./logos/sass.png" alt="" srcset=""></div>
+          <div class="icon"><img src="./logos/git.png" alt="" srcset=""></div>
+          <div class="icon"><img src="./logos/github.png" alt="" srcset=""></div>
       
+      </div> -->
+      </div>
+
 
     </section>
 
     <section id="about" class="sectionContent">
       <div class="aboutBg">
-      <div class="aboutContainer">
-        <div class="aboutHeading"><h4>About</h4></div>
-        <div class="image">
-          <img src="./Me.jpeg" alt="" srcset="">
+        <div class="container">
+          <div class="aboutContainer">
+            <div class="aboutHeading">
+              <h4>About</h4>
+            </div>
+            <div class="image">
+              <img src="./Me.jpeg" alt="" srcset="">
+            </div>
+            <div class="aboutcontent">
+              <div class="objective">
+                <h5>Objective</h5>
+                <div>To become a skilled web developer and create captivating online experiences that leave users
+                  delighted and engaged.</div>
+              </div>
+              <div class="values">
+                <h5>Core Values</h5>
+                <div>I'm fueled by boundless passion, crafting user-centric solutions with unwavering reliability and
+                  utmost integrity.</div>
+              </div>
+              <div class="journey">
+                <h5>Journey</h5>
+                <div>In 2019, as a diploma student, I began my technical journey, exploring various technologies from app
+                  development to Automation. Web technologies captivated me, and Python became my language. Joining a
+                  degree college in 2022, I delved deeper into web tech, crafting projects with Flask, Django, and
+                  embracing JavaScript challenges. Now, I'm diving into the MERN stack, fueling my web development
+                  progress.</div>
+              </div>
+  
+  
+  
+            </div>
+          </div>
         </div>
-        <div class="aboutcontent">
-          <div class="objective">
-            <h5>Objective</h5>
-            <div>To become a skilled web developer and create captivating online experiences that leave users delighted and engaged.</div>
-          </div>
-          <div class="values">
-            <h5>Core Values</h5>
-            <div>I'm fueled by boundless passion, crafting user-centric solutions with unwavering reliability and utmost integrity.</div>
-          </div>
-          <div class="journey">
-            <h5>Journey</h5>
-            <div>In 2019, as a diploma student, I began my technical journey, exploring various technologies from app development to Automation. Web technologies captivated me, and Python became my language. Joining a degree college in 2022, I delved deeper into web tech, crafting projects with Flask, Django, and embracing JavaScript challenges. Now, I'm diving into the MERN stack, fueling my web development progress.</div>
-          </div>
-            
-            
-            
-        </div>
+
+        
       </div>
-      </div>
-      
+
     </section>
 
-    <section id="skills" class="sectionContent">
-      <div>Skills</div>
-    </section>
 
     <section id="projects" class="sectionContent">
-      <div>Projects</div>
+      <div>
+        <div class="card" id="card1">
+          card1
+        </div>
+        <div class="card" id="card2">
+          card2
+        </div>
+        <div class="card" id="card3">
+          card3
+        </div>
+        <div class="card" id="card4">
+          card4
+        </div>
+        <div class="card" id="card5">
+          card5
+        </div>
+      </div>
     </section>
+
   </main>
 
   <script src="./index.js"></script>
 </body>
-
+<footer>
+  Contact
+</footer>
 </html>

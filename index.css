@@ -1,175 +1,282 @@
 @import url("https://fonts.cdnfonts.com/css/gilroy-bold");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&family=Work+Sans:wght@500&display=swap");
-.home {
-  display: grid;
-  grid-template-rows: 1fr 1fr; }
+@keyframes slide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100vi, 0, 0); /* The image width */
+  }
+}
+body {
+  background: black;
+}
 
 .bg, #about .aboutBg {
-  background-image: linear-gradient(white, #3232ad);
-  /* This styles the 3D object inserted in the aside container */ }
-  @media only screen and (max-width: 481px) {
-    .bg, #about .aboutBg {
-      background-image: none;
-      margin: 0px; } }
+  background-image: linear-gradient(white, rgb(212, 212, 212), rgb(136, 136, 136));
+  height: 100vh;
+  /* This styles the 3D object inserted in the aside container */
+}
+@media only screen and (max-width: 481px) {
+  .bg, #about .aboutBg {
+    background-image: none;
+    margin: 0px;
+  }
+}
+.bg .aSide, #about .aboutBg .aSide {
+  height: 100vh;
+  width: 50vw;
+  position: relative;
+  z-index: 1;
+}
+@media only screen and (max-width: 481px) {
   .bg .aSide, #about .aboutBg .aSide {
-    height: 45em;
-    width: 45em;
-    position: relative;
-    z-index: 1; }
-    @media only screen and (max-width: 481px) {
-      .bg .aSide, #about .aboutBg .aSide {
-        display: none; } }
-    .bg .aSide .mainModel, #about .aboutBg .aSide .mainModel {
-      width: inherit;
-      height: inherit;
-      position: inherit;
-      display: block; }
-      @media only screen and (max-width: 481px) {
-        .bg .aSide .mainModel, #about .aboutBg .aSide .mainModel {
-          display: none; } }
-  .bg .mainContainer, #about .aboutBg .mainContainer {
-    position: absolute;
-    top: 4em;
-    right: 0rem;
-    font-family: "Work Sans", sans-serif;
-    font-size: 35px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    padding: 1rem;
-    border-radius: 20px;
-    width: 10%;
-    width: 60%; }
-    @media only screen and (max-width: 481px) {
-      .bg .mainContainer, #about .aboutBg .mainContainer {
-        font-size: 30px;
-        width: 95%;
-        z-index: 3;
-        position: static;
-        padding: 4rem 2em 4rem 2em;
-        margin: 0px; } }
-    .bg .mainContainer .label, #about .aboutBg .mainContainer .label {
-      font-size: 50px;
-      color: purple; }
-      @media only screen and (max-width: 481px) {
-        .bg .mainContainer .label, #about .aboutBg .mainContainer .label {
-          font-size: 35px;
-          color: blue; } }
-    .bg .mainContainer .content, #about .aboutBg .mainContainer .content {
-      margin-top: 0.5rem;
-      width: 80%;
-      font-size: 25px; }
-      @media only screen and (max-width: 481px) {
-        .bg .mainContainer .content, #about .aboutBg .mainContainer .content {
-          font-size: 16px;
-          width: 90%; } }
-  .bg .iconContainer, #about .aboutBg .iconContainer {
-    width: 80%;
-    margin-top: 2em; }
-    .bg .iconContainer .icons, #about .aboutBg .iconContainer .icons {
-      width: 80%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      flex-direction: row;
-      text-decoration: none; }
-      .bg .iconContainer .icons a, #about .aboutBg .iconContainer .icons a {
-        text-decoration: none;
-        margin: 0.5rem;
-        font-size: 40px; }
-        @media only screen and (max-width: 481px) {
-          .bg .iconContainer .icons a, #about .aboutBg .iconContainer .icons a {
-            font-size: 35px;
-            margin: 0.2rem; } }
-      .bg .iconContainer .icons #linkedin, #about .aboutBg .iconContainer .icons #linkedin {
-        color: #1313fa; }
-      .bg .iconContainer .icons #github, #about .aboutBg .iconContainer .icons #github {
-        color: black; }
-      .bg .iconContainer .icons #hackerrank, #about .aboutBg .iconContainer .icons #hackerrank {
-        color: green; }
-    .bg .iconContainer .download, #about .aboutBg .iconContainer .download {
-      width: 80%;
-      display: flex;
-      justify-content: center; }
-      .bg .iconContainer .download #resume, #about .aboutBg .iconContainer .download #resume {
-        font-size: 15px;
-        background-color: black;
-        color: white;
-        border-radius: 1.5rem;
-        padding: 0.3rem;
-        display: flex;
-        justify-content: center;
-        text-decoration: none;
-        align-items: center;
-        padding: 1rem 3rem;
-        width: fit-content; }
-        @media only screen and (max-width: 481px) {
-          .bg .iconContainer .download #resume, #about .aboutBg .iconContainer .download #resume {
-            border-radius: 1rem;
-            padding: 0.5rem 1.5rem; } }
-        .bg .iconContainer .download #resume i, #about .aboutBg .iconContainer .download #resume i {
-          margin-right: 0.5rem; }
-
-#about .aboutBg {
-  background-image: linear-gradient(white, #c6c63e);
-  display: flex;
-  justify-content: center; }
-  @media only screen and (max-width: 481px) {
-    #about .aboutBg {
-      background-image: none; } }
-#about .aboutContainer {
-  display: grid;
-  grid-template-columns: 1.5fr 3fr;
+    display: none;
+  }
+}
+.bg .aSide .mainModel, #about .aboutBg .aSide .mainModel {
+  width: inherit;
+  height: inherit;
+  position: inherit;
+  display: block;
+}
+@media only screen and (max-width: 481px) {
+  .bg .aSide .mainModel, #about .aboutBg .aSide .mainModel {
+    display: none;
+  }
+}
+.bg .mainContainer, #about .aboutBg .mainContainer {
+  position: absolute;
+  top: 4em;
+  right: 0rem;
+  font-family: "Work Sans", sans-serif;
+  font-size: 2vi;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  padding: 1rem;
+  border-radius: 20px;
+  width: 10%;
   width: 60%;
-  margin: 4em 0em 2em 0em; }
-  @media only screen and (max-width: 481px) {
-    #about .aboutContainer {
-      display: block;
-      width: 100%;
-      margin: 0.5rem; } }
-  #about .aboutContainer .aboutHeading {
-    display: none; }
-    @media only screen and (max-width: 481px) {
-      #about .aboutContainer .aboutHeading {
-        display: block;
-        width: 100%;
-        color: white;
-        background-color: black;
-        text-align: center;
-        padding: 1rem; } }
-  #about .aboutContainer .image {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-    padding: 0.7rem;
-    border-radius: 7px;
-    border: 3px solid purple; }
-    @media only screen and (max-width: 481px) {
-      #about .aboutContainer .image {
-        margin: 2rem; } }
-    #about .aboutContainer .image img {
-      width: 100%;
-      height: 100%;
-      border-radius: 10px; }
-  #about .aboutContainer .aboutcontent {
-    padding: 3rem; }
-    @media only screen and (max-width: 481px) {
-      #about .aboutContainer .aboutcontent {
-        padding: 1rem; } }
-    #about .aboutContainer .aboutcontent > div > div {
-      font-size: large;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; }
-      @media only screen and (max-width: 481px) {
-        #about .aboutContainer .aboutcontent > div > div {
-          font-size: medium; } }
-    #about .aboutContainer .aboutcontent > div > h5 {
-      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-      font-weight: bold;
-      color: purple; }
-      @media only screen and (max-width: 481px) {
-        #about .aboutContainer .aboutcontent > div > h5 {
-          font-weight: bolder; } }
-  #about .aboutContainer .aboutcontent > div {
-    margin: 2rem; }
+}
+@media only screen and (max-width: 481px) {
+  .bg .mainContainer, #about .aboutBg .mainContainer {
+    font-size: 30px;
+    width: 95%;
+    z-index: 3;
+    position: static;
+    padding: 4rem 2em 4rem 2em;
+    margin: 0px;
+  }
+}
+.bg .mainContainer .label, #about .aboutBg .mainContainer .label {
+  font-size: 4.5vi;
+  color: purple;
+}
+@media only screen and (max-width: 481px) {
+  .bg .mainContainer .label, #about .aboutBg .mainContainer .label {
+    font-size: 35px;
+    color: blue;
+  }
+}
+.bg .mainContainer .content, #about .aboutBg .mainContainer .content {
+  margin-top: 0.5rem;
+  width: 80%;
+  font-size: 1.5vi;
+}
+@media only screen and (max-width: 481px) {
+  .bg .mainContainer .content, #about .aboutBg .mainContainer .content {
+    font-size: 16px;
+    width: 90%;
+  }
+}
+.bg .iconContainer, #about .aboutBg .iconContainer {
+  width: 80%;
+  margin-top: 2em;
+}
+.bg .iconContainer .icons, #about .aboutBg .iconContainer .icons {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: row;
+  text-decoration: none;
+}
+.bg .iconContainer .icons a, #about .aboutBg .iconContainer .icons a {
+  text-decoration: none;
+  margin: 0.5rem;
+  font-size: 3vi;
+}
+@media only screen and (max-width: 481px) {
+  .bg .iconContainer .icons a, #about .aboutBg .iconContainer .icons a {
+    font-size: 35px;
+    margin: 0.2rem;
+  }
+}
+.bg .iconContainer .icons #linkedin, #about .aboutBg .iconContainer .icons #linkedin {
+  color: rgb(19, 19, 250);
+}
+.bg .iconContainer .icons #github, #about .aboutBg .iconContainer .icons #github {
+  color: black;
+}
+.bg .iconContainer .icons #hackerrank, #about .aboutBg .iconContainer .icons #hackerrank {
+  color: green;
+}
+.bg .iconContainer .download, #about .aboutBg .iconContainer .download {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+.bg .iconContainer .download #resume, #about .aboutBg .iconContainer .download #resume {
+  font-size: 1.5vi;
+  background-color: black;
+  color: white;
+  border-radius: 1.5rem;
+  padding: 0.3rem;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  align-items: center;
+  padding: 1rem 3rem;
+  width: fit-content;
+}
+@media only screen and (max-width: 481px) {
+  .bg .iconContainer .download #resume, #about .aboutBg .iconContainer .download #resume {
+    border-radius: 1rem;
+    padding: 0.5rem 1.5rem;
+  }
+}
+.bg .iconContainer .download #resume i, #about .aboutBg .iconContainer .download #resume i {
+  margin-right: 0.5rem;
+}
+
+.skillsIcon {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.skillsIcon .icon {
+  margin: 2vi;
+  width: 7vi;
+  height: 7vi;
+  animation: slide 15s linear infinite;
+}
+.skillsIcon .icon img {
+  width: inherit;
+  height: inherit;
+  background-color: transparent;
+}
+
+#about {
+  height: 100vh;
+  width: 100vw;
+}
+#about .aboutBg {
+  background-image: linear-gradient(white, rgb(212, 212, 212), rgb(136, 136, 136));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+}
+@media only screen and (max-width: 481px) {
+  #about .aboutBg {
+    background-image: none;
+  }
+}
+#about .aboutBg .container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#about .aboutBg .container .aboutContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 60vw;
+  margin: 5vi 0em 0em 0em;
+}
+@media only screen and (max-width: 481px) {
+  #about .aboutBg .container .aboutContainer {
+    display: block;
+    width: 100%;
+    margin: 0.5rem;
+  }
+}
+#about .aboutBg .container .aboutContainer .aboutHeading {
+  display: none;
+}
+@media only screen and (max-width: 481px) {
+  #about .aboutBg .container .aboutContainer .aboutHeading {
+    display: block;
+    width: 100%;
+    color: white;
+    background-color: black;
+    text-align: center;
+    padding: 1rem;
+  }
+}
+#about .aboutBg .container .aboutContainer .image {
+  margin: 0px 0px 4vi 2vi;
+  padding: 0.7rem;
+  border-radius: 7px;
+  border: 3px solid purple;
+  width: fit-content;
+  height: fit-content;
+  text-align: center;
+}
+@media only screen and (max-width: 481px) {
+  #about .aboutBg .container .aboutContainer .image {
+    margin: 2rem;
+    height: 100%;
+    width: 100%;
+  }
+}
+#about .aboutBg .container .aboutContainer .image img {
+  height: 25vi;
+  width: 20vi;
+  border-radius: 10px;
+}
+@media only screen and (max-width: 481px) {
+  #about .aboutBg .container .aboutContainer .image img {
+    width: 100%;
+    height: 100%;
+  }
+}
+#about .aboutBg .container .aboutContainer .aboutcontent {
+  padding: 0px 2vi 0px 2.5vi;
+}
+@media only screen and (max-width: 481px) {
+  #about .aboutBg .container .aboutContainer .aboutcontent {
+    padding: 1rem;
+  }
+}
+#about .aboutBg .container .aboutContainer .aboutcontent > div > div {
+  font-size: 1.2vi;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 0px 0px 1.5vi 0px;
+}
+@media only screen and (max-width: 481px) {
+  #about .aboutBg .container .aboutContainer .aboutcontent > div > div {
+    font-size: medium;
+  }
+}
+#about .aboutBg .container .aboutContainer .aboutcontent > div > h5 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.3vi;
+  color: purple;
+}
+@media only screen and (max-width: 481px) {
+  #about .aboutBg .container .aboutContainer .aboutcontent > div > h5 {
+    font-weight: bolder;
+  }
+}
+#about .aboutBg .container .aboutContainer .aboutcontent .aboutcontent > div {
+  margin: 2rem;
+}
 
 .navContainer {
   position: fixed;
@@ -177,46 +284,57 @@
   display: flex;
   width: 100%;
   text-align: center;
-  justify-content: center; }
-  @media only screen and (max-width: 481px) {
-    .navContainer {
-      text-align: left;
-      justify-content: left;
-      display: none; } }
+  justify-content: center;
+}
+@media only screen and (max-width: 481px) {
+  .navContainer {
+    text-align: left;
+    justify-content: left;
+    display: none;
+  }
+}
+.navContainer a {
+  font-family: "Gilroy-Bold", sans-serif;
+  font-size: large;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border-bottom: 5px solid transparent;
+}
+@media only screen and (max-width: 481px) {
   .navContainer a {
-    font-family: "Gilroy-Bold", sans-serif;
-    font-size: large;
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    margin: 0.5rem;
-    border-bottom: 5px solid transparent;
-    position: relative;
-    z-index: 4; }
-    @media only screen and (max-width: 481px) {
-      .navContainer a {
-        font-size: small; } }
-  .navContainer .navText:hover {
-    color: black;
-    text-decoration: none;
-    border-radius: 5px;
-    border-bottom: 5px solid purple; }
-  .navContainer .resume {
-    background-color: #95d695; }
-  .navContainer .active {
-    color: black;
-    text-decoration: none;
-    border-radius: 5px;
-    border-bottom: 5px solid purple; }
+    font-size: small;
+  }
+}
+.navContainer .navText:hover {
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  border-bottom: 5px solid purple;
+}
+.navContainer .resume {
+  background-color: rgb(149, 214, 149);
+}
+.navContainer .active {
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  border-bottom: 5px solid purple;
+}
 
 .sectionContent {
-  display: none; }
-  @media only screen and (max-width: 481px) {
-    .sectionContent {
-      display: block; } }
+  display: none;
+}
+@media only screen and (max-width: 481px) {
+  .sectionContent {
+    display: block;
+  }
+}
 
 .activee {
-  display: block; }
+  display: block;
+}
 
 /*# sourceMappingURL=index.css.map */
